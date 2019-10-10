@@ -1,0 +1,3 @@
+<launch>
+    <node name="ar_pose_subscriber" pkg="camera_prog" type="ar_pose_subscriber.py">
+</launch>
