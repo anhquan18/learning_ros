@@ -139,6 +139,14 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/ros_start_node.cpp)
 add_executable(joy_twist src/joy_twist.cpp)
 
+add_executable(talker src/publisher.cpp)
+target_link_libraries(talker &{catkin_LIBRARIES})
+add_dependencies(talker ros_start_generate_msgs_cpp)
+
+add_executable(listener src/subscribber.cpp)
+target_link_libraries(listener &{catkin_LIBRARIES})
+add_dependencies(listener ros_start_generate_msgs_cpp)
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
